@@ -69,7 +69,7 @@ public class Main
         }
         catch (NumberFormatException e)
         {
-            System.out.println("Invalid input detected: Please enter a number");
+            System.out.print("Incorrect format detected - ");
             choice = 0;
         }
         return choice;
@@ -191,7 +191,7 @@ public class Main
         try
         {
             System.out.println("5. Testing valid creature creation:");
-            Creature testCreature5 = new Creature("ValidName", "Bahamut", 100, 100);
+            Creature testCreature5 = new Creature("Bruce", "Bahamut", 100, 100);
             System.out.println("Test #" + (testNumber + 1) + " Passed: Successfully created creature: " + testCreature5.getNameAndType());
             testNumber++;
         }
@@ -882,3 +882,60 @@ class Army
         return result;
     }
 }
+
+/*
+=== MAIN MENU ===
+1. Test Exceptions
+2. Quit
+Choice: z
+Incorrect format detected - Invalid choice. Please select a valid menu option
+
+
+=== MAIN MENU ===
+1. Test Exceptions
+2. Quit
+Choice: 3
+Invalid choice. Please select a valid menu option
+
+
+=== MAIN MENU ===
+1. Test Exceptions
+2. Quit
+Choice: 1
+
+=== TESTING EXCEPTIONS ===
+
+Testing Creature Exceptions:
+1. Testing invalid name:
+2. Testing invalid health:
+3. Testing invalid strength:
+4. Testing invalid setters:
+5. Testing valid creature creation:
+Test #5 Passed: Successfully created creature: Bruce the Bahamut
+
+Errors found:
+Test #1 Failed: ExceptionCreature: Creature name must be at least 3 characters long. Provided: 'ab'.
+Test #2 Failed: ExceptionCreature: Creature health cannot be less than zero. Provided: -25.
+Test #3 Failed: ExceptionCreature: Creature strength cannot be above 160. Provided: 200.
+Test #4 Failed: ExceptionCreature: Creature name must be at least 3 characters long. Provided: 'xy'.
+
+Testing Army Exceptions:
+1. Testing invalid army name:
+2. Testing invalid army size:
+3. Testing valid army creation:
+Test #3 Passed: Successfully created army: ValidArmyName
+
+Errors found:
+Test #1 Failed: ExceptionArmy: Army name must be at least 5 characters long. Provided: 'Red'
+Test #2 Failed:ExceptionArmy: Army size cannot be more than 10. Provided: 15
+
+===Testing completed===
+
+
+=== MAIN MENU ===
+1. Test Exceptions
+2. Quit
+Choice: 2
+Now exiting program...
+
+ */
